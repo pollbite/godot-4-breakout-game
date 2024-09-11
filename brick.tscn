@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy3vwx20jgnwp"]
+
+[ext_resource type="Texture2D" uid="uid://dvofmpalsfjn6" path="res://Green_29_16x16.png" id="1_l5byk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c36bi"]
+size = Vector2(115, 43)
+
+[node name="Brick" type="CharacterBody2D" groups=["Bricks"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Bricks"]]
+scale = Vector2(7.19141, 2.62946)
+texture = ExtResource("1_l5byk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c36bi")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj61sdppquodm"]
+
+[ext_resource type="Script" path="res://double_ball.gd" id="1_uinlb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_brmvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbh8d"]
+size = Vector2(17, 15)
+
+[node name="DoubleBall" type="CharacterBody2D"]
+position = Vector2(611, 462)
+motion_mode = 1
+script = ExtResource("1_uinlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(17.3749, 15.3749)
+texture = SubResource("CanvasTexture_brmvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_fbh8d")
+
+[node name="SloMo" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BallOver" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SloMo" to="." method="_on_slo_mo_timeout"]
+[connection signal="timeout" from="BallOver" to="." method="_on_ball_over_timeout"]

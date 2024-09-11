@@ -1,0 +1,187 @@
+[gd_scene load_steps=17 format=3 uid="uid://b5fyunpeol037"]
+
+[ext_resource type="PackedScene" uid="uid://crvvsaqyokwct" path="res://double.tscn" id="1_4ubmf"]
+[ext_resource type="Texture2D" uid="uid://b60qs476avl26" path="res://forest-bailey-underwater.jpg" id="1_1817j"]
+[ext_resource type="Script" path="res://ball.gd" id="1_ahc0s"]
+[ext_resource type="PackedScene" uid="uid://dy3vwx20jgnwp" path="res://brick.tscn" id="1_l2ad1"]
+[ext_resource type="Script" path="res://score_label.gd" id="2_7nlmk"]
+[ext_resource type="Script" path="res://paddle.gd" id="2_btofb"]
+[ext_resource type="Texture2D" uid="uid://bf737m6oagabh" path="res://jellyfish-large3.png" id="5_6js01"]
+[ext_resource type="Texture2D" uid="uid://c23hl2u8vc7k" path="res://bubble_small.png" id="7_hd43y"]
+[ext_resource type="Texture2D" uid="uid://cy0cg81476vpd" path="res://Ice_5_16x16.png" id="9_1w56l"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1q2j7"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev6py"]
+radius = 15.0333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iomai"]
+size = Vector2(100, 33.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqe3"]
+size = Vector2(24, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhf7t"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iarfo"]
+size = Vector2(20, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20vbg"]
+size = Vector2(2144, 29)
+
+[node name="Main" type="Node2D"]
+
+[node name="ScreenShake" type="Camera2D" parent="." groups=["CameraScreen"]]
+position = Vector2(577, 318)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 336)
+scale = Vector2(0.660686, 0.707576)
+texture = ExtResource("1_1817j")
+
+[node name="StartText" type="RichTextLabel" parent="."]
+offset_left = 448.0
+offset_top = 312.0
+offset_right = 719.0
+offset_bottom = 362.0
+theme_override_font_sizes/normal_font_size = 30
+text = "[CLICK TO START]"
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 380.0
+offset_bottom = 94.0
+scale = Vector2(0.972159, 0.962696)
+theme_override_font_sizes/normal_font_size = 50
+text = "Score: 0"
+script = ExtResource("2_7nlmk")
+
+[node name="double2" parent="." instance=ExtResource("1_4ubmf")]
+position = Vector2(366, 190)
+
+[node name="double" parent="." instance=ExtResource("1_4ubmf")]
+position = Vector2(897, 124)
+
+[node name="Brick22" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(1026, 252)
+
+[node name="Brick21" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(899, 251)
+
+[node name="Brick20" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(636, 250)
+
+[node name="Brick19" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(771, 251)
+
+[node name="Brick18" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(501, 249)
+
+[node name="Brick17" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(233, 247)
+
+[node name="Brick16" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(369, 248)
+
+[node name="Brick15" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(97, 246)
+
+[node name="Brick14" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(1024, 187)
+
+[node name="Brick13" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(897, 188)
+
+[node name="Brick12" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(768, 191)
+
+[node name="Brick11" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(636, 190)
+
+[node name="Brick10" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(503, 190)
+
+[node name="Brick9" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(232, 188)
+
+[node name="Brick8" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(96, 186)
+
+[node name="Brick7" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(1025, 122)
+
+[node name="Brick6" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(765, 125)
+
+[node name="Brick" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(97, 127)
+
+[node name="Brick5" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(634, 127)
+
+[node name="Brick4" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(502, 128)
+
+[node name="Brick3" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(366, 129)
+
+[node name="Brick2" parent="." instance=ExtResource("1_l2ad1")]
+position = Vector2(231, 128)
+
+[node name="Ball" type="CharacterBody2D" parent="." node_paths=PackedStringArray("start_text")]
+position = Vector2(611, 462)
+motion_mode = 1
+script = ExtResource("1_ahc0s")
+start_text = NodePath("../StartText")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Ball"]
+process_material = SubResource("ParticleProcessMaterial_1q2j7")
+texture = ExtResource("7_hd43y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(1.27343, 1.12685)
+texture = ExtResource("5_6js01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_ev6py")
+
+[node name="Paddle" type="CharacterBody2D" parent="." groups=["Paddle"]]
+position = Vector2(689, 612)
+motion_mode = 1
+script = ExtResource("2_btofb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle"]
+position = Vector2(-2.19345e-05, 0.281243)
+scale = Vector2(6.125, 2.00977)
+texture = ExtResource("9_1w56l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource("RectangleShape2D_iomai")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-11, 322)
+shape = SubResource("RectangleShape2D_pvqe3")
+
+[node name="WallCeiling" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCeiling"]
+position = Vector2(576, -11)
+shape = SubResource("RectangleShape2D_lhf7t")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(1164, 326)
+shape = SubResource("RectangleShape2D_iarfo")
+
+[node name="GameOver" type="StaticBody2D" parent="." groups=["GameOver"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOver"]
+position = Vector2(627, 696)
+shape = SubResource("RectangleShape2D_20vbg")
